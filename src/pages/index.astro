@@ -1,5 +1,6 @@
 ---
 import { defaultLocale } from "../lib/i18n";
+import { pageHref } from "../lib/routing";
 
-return Astro.redirect(`/${defaultLocale}`);
+return Astro.redirect(pageHref(defaultLocale, "home"));
 ---

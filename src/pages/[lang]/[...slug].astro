@@ -3,7 +3,7 @@ import { getCollection, render } from "astro:content";
 import SiteLayout from "../../layouts/SiteLayout.astro";
 import { getUiCopy } from "../../lib/copy";
 import { defaultLocale, isLocale, localeList, locales, type Locale } from "../../lib/i18n";
-import { pageHref } from "../../lib/routing";
+import { assetHref, pageHref } from "../../lib/routing";
 
 export async function getStaticPaths() {
   const entries = await getCollection("pages");
@@ -22,7 +22,7 @@ export async function getStaticPaths() {
 
 const langParam = Astro.params.lang;
 if (!langParam || !isLocale(langParam)) {
-  return Astro.redirect(`/${defaultLocale}`);
+  return Astro.redirect(pageHref(defaultLocale, "home"));
 }
 
 const localeCode = langParam as Locale;
@@ -34,7 +34,7 @@ const allPages = await getCollection("pages");
 const entry = allPages.find((item) => item.data.lang === localeCode && item.data.path === currentPath);
 
 if (!entry) {
-  return Astro.redirect(`/${localeCode}`);
+  return Astro.redirect(pageHref(localeCode, "home"));
 }
 
 const allPagesInLang = allPages
@@ -70,7 +70,7 @@ const languageLinks = localeList.map((code) => {
 const title = `${entry.data.title} | Dr. Michal Peles-Almagor`;
 const description = entry.data.summary ?? "Academic website scaffold";
 const isHomePage = currentSlug === "home";
-const profileImageSrc = entry.data.heroImage ?? "/uploads/michal-peles-almagor.jpg";
+const profileImageSrc = assetHref(entry.data.heroImage ?? "/uploads/michal-peles-almagor.jpg");
 const profileImageAlt = entry.data.heroImageAlt ?? ui.portraitAlt;
 ---
 

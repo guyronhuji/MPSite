@@ -1,6 +1,6 @@
 ---
 import { locales, type Locale } from "../lib/i18n";
-import { pageHref } from "../lib/routing";
+import { assetHref, pageHref } from "../lib/routing";
 import { getUiCopy } from "../lib/copy";
 import type { CollectionEntry } from "astro:content";
 
@@ -39,8 +39,8 @@ const langBadge: Record<Locale, string> = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href={assetHref("/favicon.svg")} />
+    <link rel="icon" href={assetHref("/favicon.ico")} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link
