@@ -1,11 +1,24 @@
 ---
 lang: en
 path: research/themes
-title: "Research Themes "
+title: Research Themes
+summary: Core thematic areas across literature, migration, and cultural history.
 showInNav: false
-order: 3
+order: 4
 updatedAt: "2026-03-25"
+heroImage: /uploads/michal-peles-almagor.jpg
+heroImageAlt: Dr. Michal Peles-Almagor research themes
 ---
-Use nested slugs such as `research/theme-name` to create subpages.
+## Core Themes
 
-This is where detailed project descriptions can live.
+- Hebrew and German literature in modern Jewish culture
+- Jewish literary and cultural history
+- Migration, displacement, and multilingual belonging
+- Modernism and cross-linguistic form
+- Theater, performance, and voice
+
+## Methodological Focus
+
+- Comparative literary analysis
+- Oral-textual relations in literary modernity
+- Intersections of archives, recordings, and textual interpretation

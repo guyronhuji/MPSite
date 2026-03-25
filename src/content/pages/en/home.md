@@ -3,16 +3,25 @@ lang: en
 path: home
 title: Dr. Michal Peles-Almagor
 navTitle: Home
-summary: Comparative literature and Jewish cultural history, with focus on
-  interpretation, memory, and modern thought.
+summary: Comparative Literature and Jewish Cultural History, with research on voice, migration, and multilingual modernism.
 showInNav: true
 order: 1
-updatedAt: 2026-03-25
+updatedAt: "2026-03-25"
+heroImage: /uploads/michal-peles-almagor.jpg
+heroImageAlt: Portrait of Dr. Michal Peles-Almagor
 ---
-## Current Focus
+Dr. Michal Peles-Almagor is a scholar of comparative literature and Jewish cultural history, currently a postdoctoral fellow at the Martin Buber Society of Fellows, The Hebrew University of Jerusalem.
 
-- Comparative literary interpretation.
-- Modern Jewish intellectual history.
-- Text, memory, and cultural transmission.
+## Research Interests
 
-&nbsp;
+- Hebrew and German literature
+- Jewish literary and cultural history
+- Modernism
+- Migration studies
+- Theater and voice studies
+
+## Current Work
+
+Her current project, *Voice and Migration in Jewish Women's Writing*, examines performed voice and multilingual expression in the works of Leah Goldberg, Mascha Kaleko, Else Lasker-Schuler, and Jacqueline Kahanov.
+
+For full CV details and ongoing updates, see the [Bio](/en/bio), [Research](/en/research), and [Publications](/en/publications) pages.

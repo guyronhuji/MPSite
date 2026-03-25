@@ -3,19 +3,23 @@ lang: de
 path: home
 title: Dr. Michal Peles-Almagor
 navTitle: Start
-summary: Vergleichende Literaturwissenschaft und jüdische Kulturgeschichte mit Fokus auf Interpretation, Erinnerung und moderne Theorie.
+summary: Vergleichende Literaturwissenschaft und jüdische Kulturgeschichte mit Fokus auf Stimme, Migration und Mehrsprachigkeit.
 showInNav: true
 order: 1
 updatedAt: "2026-03-25"
+heroImage: /uploads/michal-peles-almagor.jpg
+heroImageAlt: Porträt von Dr. Michal Peles-Almagor
 ---
+Dr. Michal Peles-Almagor ist Wissenschaftlerin für Vergleichende Literaturwissenschaft und jüdische Kulturgeschichte und derzeit Postdoktorandin an der Martin Buber Society of Fellows der Hebräischen Universität Jerusalem.
 
-Willkommen zur Startversion der akademischen Website von Dr. Michal Peles-Almagor.
+## Forschungsschwerpunkte
 
-Diese Fassung ist bewusst schlank, aber gestalterisch ausgereift, damit Struktur und Erscheinungsbild direkt testbar sind.
+- Hebräische und deutsche Literatur
+- Jüdische Literatur- und Kulturgeschichte
+- Modernismus
+- Migrationsforschung
+- Theater- und Stimmforschung
 
-## Aktuelle Schwerpunkte
+## Aktuelles Projekt
 
-- Vergleichende Literaturinterpretation.
-- Moderne jüdische Ideengeschichte.
-- Text, Erinnerung und kulturelle Weitergabe.
-
+Ihr aktuelles Projekt *Voice and Migration in Jewish Women's Writing* untersucht die Rolle performativer Stimme und mehrsprachiger Ausdrucksformen in den Texten jüdischer Autorinnen mit Migrationserfahrung.
