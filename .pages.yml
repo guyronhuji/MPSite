@@ -1,4 +1,7 @@
-media: public/uploads
+media:
+  input: public/uploads
+  output: /uploads
+  extensions: [jpg, jpeg, png, webp, gif, svg]
 
 content:
   - name: pages_en
@@ -36,6 +39,9 @@ content:
       - name: body
         label: Body
         type: rich-text
+        options:
+          path: ""
+          extensions: [jpg, jpeg, png, webp, gif, svg]
 
   - name: pages_he
     label: Pages (Hebrew)
@@ -72,6 +78,9 @@ content:
       - name: body
         label: Body
         type: rich-text
+        options:
+          path: ""
+          extensions: [jpg, jpeg, png, webp, gif, svg]
 
   - name: pages_ar
     label: Pages (Arabic)
@@ -108,6 +117,9 @@ content:
       - name: body
         label: Body
         type: rich-text
+        options:
+          path: ""
+          extensions: [jpg, jpeg, png, webp, gif, svg]
 
   - name: pages_de
     label: Pages (German)
@@ -144,3 +156,6 @@ content:
       - name: body
         label: Body
         type: rich-text
+        options:
+          path: ""
+          extensions: [jpg, jpeg, png, webp, gif, svg]
