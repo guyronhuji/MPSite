@@ -1,0 +1,491 @@
+---
+import { locales, type Locale } from "../lib/i18n";
+import { pageHref } from "../lib/routing";
+import { getUiCopy } from "../lib/copy";
+import type { CollectionEntry } from "astro:content";
+
+type LangLink = { code: Locale; href: string; available: boolean };
+
+interface Props {
+  title: string;
+  description?: string;
+  lang: Locale;
+  dir: "ltr" | "rtl";
+  navEntries: CollectionEntry<"pages">[];
+  currentSlug: string;
+  languageLinks: LangLink[];
+}
+
+const {
+  title,
+  description = "Academic website of Dr. Michal Peles-Almagor",
+  lang,
+  dir,
+  navEntries,
+  currentSlug,
+  languageLinks,
+} = Astro.props;
+const ui = getUiCopy(lang);
+const langBadge: Record<Locale, string> = {
+  en: "En",
+  he: "עב",
+  ar: "عر",
+  de: "De",
+};
+---
+
+<!doctype html>
+<html lang={lang} dir={dir}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Assistant:wght@400;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Frank+Ruhl+Libre:wght@400;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class={`locale-${lang}`}>
+    <div class="canvas-glow" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href={pageHref(lang, "home")}>
+        <span class="brand-title">Dr. Michal Peles-Almagor</span>
+        <span class="brand-subtitle">{ui.brandSubtitle}</span>
+      </a>
+
+      <nav class="main-nav" aria-label={ui.primaryNavAria}>
+        {
+          navEntries.map((entry) => (
+            <a
+              href={pageHref(lang, entry.data.path)}
+              class:list={["main-nav-link", currentSlug === entry.data.path && "active"]}
+            >
+              {entry.data.navTitle ?? entry.data.title}
+            </a>
+          ))
+        }
+      </nav>
+
+      <nav class="language-nav" aria-label={ui.languageNavAria}>
+        {
+          languageLinks.map((item) => (
+            <a
+              href={item.href}
+              class:list={[
+                "lang-link",
+                item.code === lang && "active",
+                !item.available && "fallback",
+              ]}
+              aria-current={item.code === lang ? "page" : undefined}
+              title={locales[item.code].label}
+            >
+              {langBadge[item.code]}
+            </a>
+          ))
+        }
+      </nav>
+    </header>
+
+    <main class="site-main">
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --bg: oklch(0.97 0.012 95);
+    --bg-strong: oklch(0.93 0.02 95);
+    --ink: oklch(0.21 0.028 250);
+    --ink-soft: oklch(0.4 0.03 250);
+    --accent: oklch(0.37 0.16 255);
+    --accent-soft: oklch(0.84 0.07 255);
+    --line: oklch(0.72 0.03 95);
+    --radius: 18px;
+    --shadow: 0 18px 38px color-mix(in oklab, var(--accent), transparent 78%);
+    --content: min(1120px, 92vw);
+    --font-body-latin: "Source Sans 3", sans-serif;
+    --font-head-latin: "Fraunces", serif;
+    --font-body-he: "Assistant", sans-serif;
+    --font-head-he: "Frank Ruhl Libre", serif;
+    --font-body-ar: "Noto Naskh Arabic", serif;
+    --font-head-ar: "Amiri", serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--bg);
+    color: var(--ink);
+  }
+
+  body {
+    font-family: var(--font-body-latin);
+    line-height: 1.65;
+    position: relative;
+    overflow-x: clip;
+  }
+
+  body.locale-he {
+    font-family: var(--font-body-he);
+  }
+
+  body.locale-ar {
+    font-family: var(--font-body-ar);
+  }
+
+  h1,
+  h2,
+  h3,
+  .brand-title {
+    font-family: var(--font-head-latin);
+    letter-spacing: 0.01em;
+    line-height: 1.15;
+  }
+
+  body.locale-he h1,
+  body.locale-he h2,
+  body.locale-he h3,
+  body.locale-he .brand-title {
+    font-family: var(--font-head-he);
+  }
+
+  body.locale-ar h1,
+  body.locale-ar h2,
+  body.locale-ar h3,
+  body.locale-ar .brand-title {
+    font-family: var(--font-head-ar);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .canvas-glow {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(40rem 30rem at 7% 10%, color-mix(in oklab, var(--accent), white 85%), transparent),
+      radial-gradient(40rem 30rem at 92% 0%, color-mix(in oklab, var(--accent), white 90%), transparent),
+      linear-gradient(180deg, var(--bg), var(--bg-strong));
+  }
+
+  .site-header {
+    width: var(--content);
+    margin: clamp(1rem, 2vw, 1.6rem) auto 0;
+    padding: clamp(0.9rem, 2vw, 1.1rem);
+    padding-inline-end: clamp(5.8rem, 13vw, 7.6rem);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: color-mix(in oklab, var(--bg), white 24%);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(8px);
+    display: grid;
+    gap: 0.8rem;
+    animation: rise 420ms ease-out both;
+    position: relative;
+  }
+
+  .brand {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.12rem;
+  }
+
+  .brand-title {
+    font-size: clamp(1.35rem, 2vw, 1.85rem);
+    font-weight: 600;
+  }
+
+  .brand-subtitle {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+
+  .main-nav {
+    display: flex;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+  }
+
+  .main-nav-link {
+    padding: 0.4rem 0.72rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    transition: transform 220ms ease, background-color 220ms ease, border-color 220ms ease;
+  }
+
+  .main-nav-link:hover {
+    transform: translateY(-1px);
+    border-color: color-mix(in oklab, var(--accent), white 42%);
+    background: color-mix(in oklab, var(--accent), white 80%);
+  }
+
+  .main-nav-link.active {
+    border-color: color-mix(in oklab, var(--accent), black 8%);
+    background: color-mix(in oklab, var(--accent), white 76%);
+    font-weight: 600;
+    color: color-mix(in oklab, var(--accent), black 20%);
+  }
+
+  .language-nav {
+    position: absolute;
+    inset-block-start: clamp(0.82rem, 1.8vw, 1rem);
+    inset-inline-end: clamp(0.82rem, 1.8vw, 1rem);
+    display: flex;
+    align-items: center;
+    gap: 0.16rem;
+    white-space: nowrap;
+  }
+
+  .lang-link {
+    border-radius: 9px;
+    padding: 0.2rem 0.38rem;
+    font-size: 0.76rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--ink-soft);
+    border: 1px solid transparent;
+    transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+  }
+
+  .lang-link:hover {
+    color: var(--ink);
+    transform: translateY(-1px);
+  }
+
+  .lang-link.active {
+    background: color-mix(in oklab, var(--accent), black 4%);
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 3px 9px color-mix(in oklab, var(--accent), transparent 58%);
+  }
+
+  .lang-link.fallback {
+    opacity: 0.7;
+  }
+
+  .site-main {
+    width: var(--content);
+    margin: clamp(1rem, 2vw, 1.35rem) auto;
+    animation: rise 520ms ease-out both;
+  }
+
+  .article-shell {
+    border: 1px solid var(--line);
+    border-radius: clamp(16px, 2vw, 24px);
+    padding: clamp(1.05rem, 2.7vw, 2rem);
+    background: color-mix(in oklab, var(--bg), white 20%);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: clip;
+  }
+
+  .article-shell::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--accent), white 8%),
+      color-mix(in oklab, var(--accent), white 40%)
+    );
+  }
+
+  .page-hero {
+    display: grid;
+    gap: 0.55rem;
+    margin-bottom: clamp(1rem, 2.4vw, 1.4rem);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1rem;
+  }
+
+  .home-splash {
+    display: grid;
+    grid-template-columns: minmax(130px, 190px) 1fr;
+    gap: clamp(0.85rem, 2vw, 1.2rem);
+    align-items: stretch;
+    margin-bottom: 1rem;
+  }
+
+  .profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+  }
+
+  .intro-card {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: color-mix(in oklab, var(--bg), white 35%);
+    padding: 0.85rem 0.95rem;
+    display: grid;
+    align-content: center;
+    gap: 0.25rem;
+  }
+
+  .intro-tag {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+  }
+
+  .intro-title {
+    margin: 0;
+    font-size: clamp(1.1rem, 2vw, 1.45rem);
+    font-weight: 600;
+  }
+
+  .page-hero h1 {
+    margin: 0;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+  }
+
+  .summary {
+    margin: 0;
+    font-size: clamp(1rem, 1.4vw, 1.12rem);
+    color: var(--ink-soft);
+    max-width: 68ch;
+  }
+
+  .meta {
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+  }
+
+  .article-body {
+    font-size: clamp(1.03rem, 1.3vw, 1.15rem);
+  }
+
+  .article-body p,
+  .article-body li {
+    max-width: 70ch;
+  }
+
+  .article-body ul {
+    padding-inline-start: 1.2rem;
+  }
+
+  .article-body li + li {
+    margin-top: 0.22rem;
+  }
+
+  html[dir="rtl"] .article-body p,
+  html[dir="rtl"] .article-body li,
+  html[dir="rtl"] .summary {
+    max-width: none;
+  }
+
+  .article-body h2,
+  .article-body h3 {
+    margin-top: 1.6em;
+    margin-bottom: 0.55em;
+  }
+
+  .article-body a {
+    color: color-mix(in oklab, var(--accent), black 20%);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in oklab, var(--accent), white 25%);
+    text-underline-offset: 0.16em;
+  }
+
+  .children {
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    padding-top: 1rem;
+  }
+
+  .children h2 {
+    margin-top: 0;
+    margin-bottom: 0.7rem;
+    font-size: 1.2rem;
+  }
+
+  .children-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .children-list a {
+    display: block;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 0.75rem 0.85rem;
+    background: color-mix(in oklab, var(--bg), white 35%);
+  }
+
+  .children-list a:hover {
+    border-color: color-mix(in oklab, var(--accent), black 6%);
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 800px) {
+    .site-header {
+      border-radius: 14px;
+      padding-inline-end: clamp(0.9rem, 2vw, 1.1rem);
+    }
+
+    .main-nav-link {
+      padding: 0.36rem 0.58rem;
+      font-size: 0.95rem;
+    }
+
+    .language-nav {
+      position: static;
+      justify-content: flex-start;
+    }
+
+    .article-shell {
+      border-radius: 14px;
+    }
+
+    .home-splash {
+      grid-template-columns: 1fr;
+    }
+
+    .profile-photo {
+      max-width: 190px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+</style>

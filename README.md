@@ -1,46 +1,69 @@
-# Astro Starter Kit: Basics
+# Dr. Michal Peles-Almagor Site Scaffold
 
-```sh
-npm create astro@latest -- --template basics
+Multilingual Astro scaffold with GitHub Pages deployment and a Git-based CMS editing layer.
+
+## Features
+
+- Language support: English (`en`), Hebrew (`he`), Arabic (`ar`), German (`de`)
+- RTL support for Hebrew and Arabic
+- Content collections with Markdown pages and subpages
+- Language-aware routing (`/en`, `/he`, `/ar`, `/de`)
+- `.pages.yml` config for Pages CMS
+- GitHub Actions workflow for GitHub Pages deployment
+
+## Local development
+
+```bash
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Then open [http://localhost:4321](http://localhost:4321).
 
-## 🚀 Project Structure
+## Content model
 
-Inside of your Astro project, you'll see the following folders and files:
+All editable pages live in:
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+- `src/content/pages/en`
+- `src/content/pages/he`
+- `src/content/pages/ar`
+- `src/content/pages/de`
+
+Each page uses frontmatter:
+
+```yaml
+lang: en|he|ar|de
+path: home | research | research/themes
+title: Page title
+navTitle: Optional short nav label
+summary: Optional intro
+showInNav: true|false
+order: number
+updatedAt: "YYYY-MM-DD"
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### Subpages
 
-## 🧞 Commands
+Use `path` values with `/` to create nested pages, for example:
 
-All commands are run from the root of the project, from a terminal:
+- `research/themes`
+- `teaching/course-a`
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## CMS editing (Pages CMS)
 
-## 👀 Want to learn more?
+1. Push this repository to GitHub.
+2. Open [app.pagescms.org](https://app.pagescms.org).
+3. Install the Pages CMS GitHub App.
+4. Open this repo and edit content using `.pages.yml`.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## GitHub Pages deployment
+
+The workflow file is at `.github/workflows/deploy.yml`.
+
+Before first deploy, set the final production URL in `astro.config.mjs`:
+
+```js
+site: "https://<your-github-username>.github.io"
+```
+
+If you later use a custom domain, update this `site` value accordingly.

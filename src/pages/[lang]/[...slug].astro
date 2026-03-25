@@ -1,0 +1,124 @@
+---
+import { getCollection, render } from "astro:content";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import { getUiCopy } from "../../lib/copy";
+import { defaultLocale, isLocale, localeList, locales, type Locale } from "../../lib/i18n";
+import { pageHref } from "../../lib/routing";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("pages");
+
+  return entries.map((entry) => {
+    const slugParam = entry.data.path === "home" ? undefined : entry.data.path;
+
+    return {
+      params: {
+        lang: entry.data.lang,
+        slug: slugParam,
+      },
+    };
+  });
+}
+
+const langParam = Astro.params.lang;
+if (!langParam || !isLocale(langParam)) {
+  return Astro.redirect(`/${defaultLocale}`);
+}
+
+const localeCode = langParam as Locale;
+const localeMeta = locales[localeCode];
+const ui = getUiCopy(localeCode);
+const currentPath = Astro.params.slug ?? "home";
+
+const allPages = await getCollection("pages");
+const entry = allPages.find((item) => item.data.lang === localeCode && item.data.path === currentPath);
+
+if (!entry) {
+  return Astro.redirect(`/${localeCode}`);
+}
+
+const allPagesInLang = allPages
+  .filter((item) => item.data.lang === localeCode)
+  .sort(
+  (left, right) => left.data.order - right.data.order,
+  );
+
+const navEntries = allPagesInLang.filter((item) => item.data.showInNav);
+
+const { Content } = await render(entry);
+
+const currentSlug = currentPath;
+const children = allPagesInLang.filter((candidate) => {
+  if (candidate.id === entry.id) return false;
+  if (currentSlug === "home") return false;
+  if (!candidate.data.path.startsWith(`${currentSlug}/`)) return false;
+
+  const remainingPath = candidate.data.path.replace(`${currentSlug}/`, "");
+  return !remainingPath.includes("/");
+});
+
+const languageLinks = localeList.map((code) => {
+  const translated = allPages.find((item) => item.data.lang === code && item.data.path === currentSlug);
+
+  return {
+    code,
+    href: translated ? pageHref(code, translated.data.path) : pageHref(code, "home"),
+    available: Boolean(translated),
+  };
+});
+
+const title = `${entry.data.title} | Dr. Michal Peles-Almagor`;
+const description = entry.data.summary ?? "Academic website scaffold";
+const isHomePage = currentSlug === "home";
+---
+
+<SiteLayout
+  title={title}
+  description={description}
+  lang={localeCode}
+  dir={localeMeta.dir}
+  navEntries={navEntries}
+  currentSlug={currentSlug}
+  languageLinks={languageLinks}
+>
+  <article class="article-shell">
+    {
+      isHomePage && (
+        <section class="home-splash" aria-label={ui.portraitAlt}>
+          <img
+            src="/uploads/michal-peles-almagor.jpg"
+            alt={ui.portraitAlt}
+            class="profile-photo"
+            width="190"
+            height="250"
+            loading="eager"
+          />
+          <div class="intro-card">
+            <p class="intro-tag">{ui.profileTag}</p>
+            <p class="intro-title">{entry.data.title}</p>
+          </div>
+        </section>
+      )
+    }
+    <header class="page-hero">
+      <h1>{entry.data.title}</h1>
+      {entry.data.summary && <p class="summary">{entry.data.summary}</p>}
+      {entry.data.updatedAt && <p class="meta">{ui.updatedLabel}: {entry.data.updatedAt}</p>}
+    </header>
+
+    <div class="article-body">
+      <Content />
+    </div>
+
+    {
+      children.length > 0 && (
+        <section class="children" aria-label={ui.relatedPagesAria}>
+          <h2>{ui.subpagesHeading}</h2>
+          <ul class="children-list">
+            {children.map((child) => <li><a href={pageHref(localeCode, child.data.path)}>{child.data.title}</a></li>)}
+          </ul>
+        </section>
+      )
+    }
+  </article>
+</SiteLayout>
