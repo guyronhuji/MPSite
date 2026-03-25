@@ -57,6 +57,14 @@ const children = allPagesInLang.filter((candidate) => {
   return !remainingPath.includes("/");
 });
 
+const childCards = children.map((child) => ({
+  title: child.data.title,
+  summary: child.data.summary,
+  href: pageHref(localeCode, child.data.path),
+  image: child.data.heroImage ? assetHref(child.data.heroImage) : undefined,
+  imageAlt: child.data.heroImageAlt ?? child.data.title,
+}));
+
 const languageLinks = localeList.map((code) => {
   const translated = allPages.find((item) => item.data.lang === code && item.data.path === currentSlug);
 
@@ -113,10 +121,26 @@ const profileImageAlt = entry.data.heroImageAlt ?? ui.portraitAlt;
     </div>
 
     {
-      children.length > 0 && (
+      childCards.length > 0 && (
         <section class="children" aria-label={ui.relatedPagesAria}>
           <ul class="children-list">
-            {children.map((child) => <li><a href={pageHref(localeCode, child.data.path)}>{child.data.title}</a></li>)}
+            {
+              childCards.map((child) => (
+                <li class="children-card-item">
+                  <a
+                    href={child.href}
+                    class:list={["children-card-link", child.image && "has-image"]}
+                    style={child.image ? `--child-card-image: url('${child.image}');` : undefined}
+                    aria-label={child.image ? `${child.title} — ${child.imageAlt}` : child.title}
+                  >
+                    <span class="children-card-overlay">
+                      <span class="children-card-title">{child.title}</span>
+                      {child.summary && <span class="children-card-summary">{child.summary}</span>}
+                    </span>
+                  </a>
+                </li>
+              ))
+            }
           </ul>
         </section>
       )

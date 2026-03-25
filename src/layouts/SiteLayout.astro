@@ -427,18 +427,77 @@ const langBadge: Record<Locale, string> = {
     margin: 0;
     display: grid;
     gap: 0.6rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 
-  .children-list a {
+  .children-card-item {
+    min-width: 0;
+  }
+
+  .children-card-link {
     display: block;
     border: 1px solid var(--line);
     border-radius: 14px;
-    padding: 0.75rem 0.85rem;
-    background: color-mix(in oklab, var(--bg), white 35%);
+    min-height: 136px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+      165deg,
+      color-mix(in oklab, var(--accent), white 78%),
+      color-mix(in oklab, var(--bg), white 40%)
+    );
+    transition:
+      transform 220ms ease,
+      border-color 220ms ease,
+      box-shadow 220ms ease;
   }
 
-  .children-list a:hover {
+  .children-card-link.has-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--child-card-image);
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.02);
+  }
+
+  .children-card-overlay {
+    position: relative;
+    z-index: 1;
+    min-height: 136px;
+    padding: 0.8rem 0.9rem;
+    display: grid;
+    align-content: end;
+    gap: 0.28rem;
+    background: linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--ink), transparent 100%) 0%,
+      color-mix(in oklab, var(--ink), transparent 75%) 42%,
+      color-mix(in oklab, var(--ink), transparent 32%) 100%
+    );
+  }
+
+  .children-card-title {
+    display: block;
+    font-size: 1.16rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 2px 8px color-mix(in oklab, var(--ink), transparent 56%);
+  }
+
+  .children-card-summary {
+    display: block;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: color-mix(in oklab, white, var(--accent) 10%);
+    text-shadow: 0 1px 6px color-mix(in oklab, var(--ink), transparent 60%);
+  }
+
+  .children-card-link:hover {
     border-color: color-mix(in oklab, var(--accent), black 6%);
+    box-shadow: 0 12px 24px color-mix(in oklab, var(--accent), transparent 72%);
+    transform: translateY(-2px);
   }
 
   @keyframes rise {
