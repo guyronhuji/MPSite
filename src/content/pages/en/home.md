@@ -9,8 +9,6 @@ showInNav: true
 order: 1
 updatedAt: 2026-03-25
 ---
-This is a test for now
-
 ## Current Focus
 
 - Comparative literary interpretation.
