@@ -36,6 +36,15 @@ content:
       - name: updatedAt
         label: Updated at (YYYY-MM-DD)
         type: string
+      - name: heroImage
+        label: Hero image
+        type: image
+        options:
+          path: ""
+          extensions: [jpg, jpeg, png, webp, gif, svg]
+      - name: heroImageAlt
+        label: Hero image alt text
+        type: string
       - name: body
         label: Body
         type: rich-text
@@ -74,6 +83,15 @@ content:
         default: 100
       - name: updatedAt
         label: Updated at (YYYY-MM-DD)
+        type: string
+      - name: heroImage
+        label: Hero image
+        type: image
+        options:
+          path: ""
+          extensions: [jpg, jpeg, png, webp, gif, svg]
+      - name: heroImageAlt
+        label: Hero image alt text
         type: string
       - name: body
         label: Body
@@ -114,6 +132,15 @@ content:
       - name: updatedAt
         label: Updated at (YYYY-MM-DD)
         type: string
+      - name: heroImage
+        label: Hero image
+        type: image
+        options:
+          path: ""
+          extensions: [jpg, jpeg, png, webp, gif, svg]
+      - name: heroImageAlt
+        label: Hero image alt text
+        type: string
       - name: body
         label: Body
         type: rich-text
@@ -152,6 +179,15 @@ content:
         default: 100
       - name: updatedAt
         label: Updated at (YYYY-MM-DD)
+        type: string
+      - name: heroImage
+        label: Hero image
+        type: image
+        options:
+          path: ""
+          extensions: [jpg, jpeg, png, webp, gif, svg]
+      - name: heroImageAlt
+        label: Hero image alt text
         type: string
       - name: body
         label: Body
