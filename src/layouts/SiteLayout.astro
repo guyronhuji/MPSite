@@ -365,7 +365,6 @@ const langBadge: Record<Locale, string> = {
     margin: 0;
     font-size: clamp(1rem, 1.4vw, 1.12rem);
     color: var(--ink-soft);
-    max-width: 68ch;
   }
 
   .meta {
@@ -379,7 +378,7 @@ const langBadge: Record<Locale, string> = {
 
   .article-body p,
   .article-body li {
-    max-width: 70ch;
+    max-width: none;
   }
 
   .article-body ul {
@@ -388,12 +387,6 @@ const langBadge: Record<Locale, string> = {
 
   .article-body li + li {
     margin-top: 0.22rem;
-  }
-
-  html[dir="rtl"] .article-body p,
-  html[dir="rtl"] .article-body li,
-  html[dir="rtl"] .summary {
-    max-width: none;
   }
 
   .article-body h2,
