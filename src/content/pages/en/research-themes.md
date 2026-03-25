@@ -4,7 +4,7 @@ path: research/themes
 title: "Research Themes "
 showInNav: false
 order: 3
-updatedAt: 2026-03-25
+updatedAt: "2026-03-25"
 ---
 Use nested slugs such as `research/theme-name` to create subpages.
 
