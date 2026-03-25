@@ -8,7 +8,7 @@ showInNav: true
 order: 4
 updatedAt: 2026-03-25
 ---
-Initial structure: Test
+&nbsp;
 
 - Books
 - Peer-reviewed articles
