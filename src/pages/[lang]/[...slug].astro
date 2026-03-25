@@ -113,7 +113,6 @@ const isHomePage = currentSlug === "home";
     {
       children.length > 0 && (
         <section class="children" aria-label={ui.relatedPagesAria}>
-          <h2>{ui.subpagesHeading}</h2>
           <ul class="children-list">
             {children.map((child) => <li><a href={pageHref(localeCode, child.data.path)}>{child.data.title}</a></li>)}
           </ul>

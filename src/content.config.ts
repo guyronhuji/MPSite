@@ -12,7 +12,12 @@ const pages = defineCollection({
     summary: z.string().optional(),
     showInNav: z.boolean().default(true),
     order: z.number().default(100),
-    updatedAt: z.string().optional(),
+    updatedAt: z
+      .preprocess((value) => {
+        if (value instanceof Date) return value.toISOString().slice(0, 10);
+        return value;
+      }, z.string())
+      .optional(),
   }),
 });
 
