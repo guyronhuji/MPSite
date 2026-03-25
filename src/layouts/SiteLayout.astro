@@ -457,9 +457,10 @@ const langBadge: Record<Locale, string> = {
     position: absolute;
     inset: 0;
     background-image: var(--child-card-image);
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
-    transform: scale(1.02);
+    background-color: color-mix(in oklab, var(--bg), white 20%);
   }
 
   .children-card-overlay {
