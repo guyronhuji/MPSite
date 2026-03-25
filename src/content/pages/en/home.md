@@ -22,4 +22,4 @@ Dr. Michal Peles-Almagor is a scholar of comparative literature and Jewish cultu
 
 Her current project, *Voice and Migration in Jewish Women's Writing*, examines performed voice and multilingual expression in the works of Leah Goldberg, Mascha Kaleko, Else Lasker-Schuler, and Jacqueline Kahanov.
 
-For full CV details and ongoing updates, see the [Bio](/en/bio), [Research](/en/research), and [Publications](/en/publications) pages.
+For full CV details and ongoing updates, see the [Bio](bio), [Research](research), and [Publications](publications) pages.
