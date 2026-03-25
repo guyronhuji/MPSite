@@ -8,6 +8,7 @@ content:
     label: Pages (English)
     type: collection
     path: src/content/pages/en
+    format: yaml-frontmatter
     fields:
       - name: lang
         label: Language code
@@ -39,23 +40,18 @@ content:
       - name: heroImage
         label: Hero image
         type: image
-        options:
-          path: ""
-          extensions: [jpg, jpeg, png, webp, gif, svg]
       - name: heroImageAlt
         label: Hero image alt text
         type: string
       - name: body
         label: Body
         type: rich-text
-        options:
-          path: ""
-          extensions: [jpg, jpeg, png, webp, gif, svg]
 
   - name: pages_he
     label: Pages (Hebrew)
     type: collection
     path: src/content/pages/he
+    format: yaml-frontmatter
     fields:
       - name: lang
         label: Language code
@@ -87,23 +83,18 @@ content:
       - name: heroImage
         label: Hero image
         type: image
-        options:
-          path: ""
-          extensions: [jpg, jpeg, png, webp, gif, svg]
       - name: heroImageAlt
         label: Hero image alt text
         type: string
       - name: body
         label: Body
         type: rich-text
-        options:
-          path: ""
-          extensions: [jpg, jpeg, png, webp, gif, svg]
 
   - name: pages_ar
     label: Pages (Arabic)
     type: collection
     path: src/content/pages/ar
+    format: yaml-frontmatter
     fields:
       - name: lang
         label: Language code
@@ -135,23 +126,18 @@ content:
       - name: heroImage
         label: Hero image
         type: image
-        options:
-          path: ""
-          extensions: [jpg, jpeg, png, webp, gif, svg]
       - name: heroImageAlt
         label: Hero image alt text
         type: string
       - name: body
         label: Body
         type: rich-text
-        options:
-          path: ""
-          extensions: [jpg, jpeg, png, webp, gif, svg]
 
   - name: pages_de
     label: Pages (German)
     type: collection
     path: src/content/pages/de
+    format: yaml-frontmatter
     fields:
       - name: lang
         label: Language code
@@ -183,15 +169,9 @@ content:
       - name: heroImage
         label: Hero image
         type: image
-        options:
-          path: ""
-          extensions: [jpg, jpeg, png, webp, gif, svg]
       - name: heroImageAlt
         label: Hero image alt text
         type: string
       - name: body
         label: Body
         type: rich-text
-        options:
-          path: ""
-          extensions: [jpg, jpeg, png, webp, gif, svg]
