@@ -7,8 +7,6 @@ summary: ملف أكاديمي، زمالات، جوائز، وتعليم.
 showInNav: true
 order: 2
 updatedAt: "2026-03-25"
-heroImage: /uploads/michal-peles-almagor.jpg
-heroImageAlt: صورة الدكتورة ميخال بيليس-ألماغور
 ---
 ## الملف الأكاديمي
 

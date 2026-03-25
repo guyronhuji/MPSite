@@ -6,8 +6,6 @@ summary: محاور أساسية في الأدب والهجرة والتاريخ
 showInNav: false
 order: 4
 updatedAt: "2026-03-25"
-heroImage: /uploads/michal-peles-almagor.jpg
-heroImageAlt: موضوعات بحث الدكتورة ميخال بيليس-ألماغور
 ---
 ## محاور أساسية
 

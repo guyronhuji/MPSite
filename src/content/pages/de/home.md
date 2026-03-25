@@ -7,8 +7,6 @@ summary: Vergleichende Literaturwissenschaft und jüdische Kulturgeschichte mit 
 showInNav: true
 order: 1
 updatedAt: "2026-03-25"
-heroImage: /uploads/michal-peles-almagor.jpg
-heroImageAlt: Porträt von Dr. Michal Peles-Almagor
 ---
 Dr. Michal Peles-Almagor ist Wissenschaftlerin für Vergleichende Literaturwissenschaft und jüdische Kulturgeschichte und derzeit Postdoktorandin an der Martin Buber Society of Fellows der Hebräischen Universität Jerusalem.
 

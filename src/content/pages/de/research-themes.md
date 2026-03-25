@@ -6,8 +6,6 @@ summary: Zentrale Themenfelder zu Literatur, Migration und Kulturgeschichte.
 showInNav: false
 order: 4
 updatedAt: "2026-03-25"
-heroImage: /uploads/michal-peles-almagor.jpg
-heroImageAlt: Forschungsthemen von Dr. Michal Peles-Almagor
 ---
 ## Kernthemen
 

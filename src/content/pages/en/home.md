@@ -7,8 +7,6 @@ summary: Comparative Literature and Jewish Cultural History, with research on vo
 showInNav: true
 order: 1
 updatedAt: "2026-03-25"
-heroImage: /uploads/michal-peles-almagor.jpg
-heroImageAlt: Portrait of Dr. Michal Peles-Almagor
 ---
 Dr. Michal Peles-Almagor is a scholar of comparative literature and Jewish cultural history, currently a postdoctoral fellow at the Martin Buber Society of Fellows, The Hebrew University of Jerusalem.
 

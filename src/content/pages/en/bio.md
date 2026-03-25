@@ -7,8 +7,6 @@ summary: Full academic bio and curriculum vitae.
 showInNav: true
 order: 2
 updatedAt: "2026-03-25"
-heroImage: /uploads/michal-peles-almagor.jpg
-heroImageAlt: Portrait of Dr. Michal Peles-Almagor
 ---
 ## Academic Profile
 

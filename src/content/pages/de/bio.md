@@ -7,8 +7,6 @@ summary: Akademisches Profil, Fellowships, Auszeichnungen und Ausbildung.
 showInNav: true
 order: 2
 updatedAt: "2026-03-25"
-heroImage: /uploads/michal-peles-almagor.jpg
-heroImageAlt: Porträt von Dr. Michal Peles-Almagor
 ---
 ## Akademisches Profil
 

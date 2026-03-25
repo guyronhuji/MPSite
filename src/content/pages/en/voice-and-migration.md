@@ -6,8 +6,6 @@ summary: A focused subpage on multilingual voice, migration, and literary perfor
 showInNav: false
 order: 5
 updatedAt: "2026-03-25"
-heroImage: /uploads/michal-peles-almagor.jpg
-heroImageAlt: Voice and migration research focus
 ---
 This subproject examines the role of spoken performance and multilingual writing in the works of Jewish women who crossed linguistic and geographic borders.
 

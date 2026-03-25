@@ -7,8 +7,6 @@ summary: פרופיל אקדמי, מלגות, פרסים והשכלה.
 showInNav: true
 order: 2
 updatedAt: "2026-03-25"
-heroImage: /uploads/michal-peles-almagor.jpg
-heroImageAlt: דיוקן ד"ר מיכל פלס-אלמגור
 ---
 ## פרופיל אקדמי
 
