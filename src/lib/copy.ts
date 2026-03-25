@@ -7,7 +7,6 @@ type UiCopy = {
   languageNavAria: string;
   subpagesHeading: string;
   relatedPagesAria: string;
-  updatedLabel: string;
   portraitAlt: string;
   profileTag: string;
 };
@@ -20,7 +19,6 @@ const uiByLocale: Record<Locale, UiCopy> = {
     languageNavAria: "Language switcher",
     subpagesHeading: "Subpages",
     relatedPagesAria: "Related pages",
-    updatedLabel: "Updated",
     portraitAlt: "Portrait of Dr. Michal Peles-Almagor",
     profileTag: "Academic Profile",
   },
@@ -31,7 +29,6 @@ const uiByLocale: Record<Locale, UiCopy> = {
     languageNavAria: "בחירת שפה",
     subpagesHeading: "תתי-עמודים",
     relatedPagesAria: "עמודים קשורים",
-    updatedLabel: "עודכן",
     portraitAlt: "דיוקן של ד\"ר מיכל פלס-אלמגור",
     profileTag: "פרופיל אקדמי",
   },
@@ -42,7 +39,6 @@ const uiByLocale: Record<Locale, UiCopy> = {
     languageNavAria: "مبدّل اللغة",
     subpagesHeading: "صفحات فرعية",
     relatedPagesAria: "صفحات ذات صلة",
-    updatedLabel: "آخر تحديث",
     portraitAlt: "صورة الدكتورة ميخال بيليس-ألماغور",
     profileTag: "ملف أكاديمي",
   },
@@ -53,7 +49,6 @@ const uiByLocale: Record<Locale, UiCopy> = {
     languageNavAria: "Sprachumschalter",
     subpagesHeading: "Unterseiten",
     relatedPagesAria: "Verwandte Seiten",
-    updatedLabel: "Aktualisiert",
     portraitAlt: "Porträt von Dr. Michal Peles-Almagor",
     profileTag: "Akademisches Profil",
   },

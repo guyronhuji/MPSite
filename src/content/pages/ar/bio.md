@@ -6,7 +6,6 @@ navTitle: السيرة
 summary: ملف أكاديمي، زمالات، جوائز، وتعليم.
 showInNav: true
 order: 2
-updatedAt: "2026-03-25"
 ---
 ## الملف الأكاديمي
 

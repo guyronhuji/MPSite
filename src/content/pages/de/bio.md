@@ -6,7 +6,6 @@ navTitle: Biografie
 summary: Akademisches Profil, Fellowships, Auszeichnungen und Ausbildung.
 showInNav: true
 order: 2
-updatedAt: "2026-03-25"
 ---
 ## Akademisches Profil
 

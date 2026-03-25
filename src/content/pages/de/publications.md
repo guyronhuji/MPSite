@@ -6,7 +6,6 @@ navTitle: Publikationen
 summary: Auswahl an Buchprojekt, Fachartikeln, Essays, Rezensionen und Übersetzungen.
 showInNav: true
 order: 5
-updatedAt: "2026-03-25"
 ---
 ## Buchprojekt
 

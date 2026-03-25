@@ -5,7 +5,6 @@ title: Research Themes
 summary: Core thematic areas across literature, migration, and cultural history.
 showInNav: false
 order: 4
-updatedAt: "2026-03-25"
 ---
 ## Core Themes
 

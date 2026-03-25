@@ -6,7 +6,6 @@ navTitle: Research
 summary: Current projects on voice, migration, multilingualism, and Jewish literary modernity.
 showInNav: true
 order: 3
-updatedAt: "2026-03-25"
 ---
 ## Current Project
 

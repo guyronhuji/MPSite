@@ -6,7 +6,6 @@ navTitle: Publications
 summary: Selected books, peer-reviewed articles, essays, reviews, and translations.
 showInNav: true
 order: 5
-updatedAt: "2026-03-25"
 ---
 ## Book Project
 

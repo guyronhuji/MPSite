@@ -37,9 +37,6 @@ content:
         label: Order
         type: number
         default: 100
-      - name: updatedAt
-        label: Updated at (YYYY-MM-DD)
-        type: string
       - name: heroImage
         label: Hero image
         type: image
@@ -82,9 +79,6 @@ content:
         label: Order
         type: number
         default: 100
-      - name: updatedAt
-        label: Updated at (YYYY-MM-DD)
-        type: string
       - name: heroImage
         label: Hero image
         type: image
@@ -127,9 +121,6 @@ content:
         label: Order
         type: number
         default: 100
-      - name: updatedAt
-        label: Updated at (YYYY-MM-DD)
-        type: string
       - name: heroImage
         label: Hero image
         type: image
@@ -172,9 +163,6 @@ content:
         label: Order
         type: number
         default: 100
-      - name: updatedAt
-        label: Updated at (YYYY-MM-DD)
-        type: string
       - name: heroImage
         label: Hero image
         type: image

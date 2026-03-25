@@ -6,7 +6,6 @@ navTitle: פרסומים
 summary: מבחר ספר, מאמרים שפיטים, מסות, ביקורות ותרגומים.
 showInNav: true
 order: 5
-updatedAt: "2026-03-25"
 ---
 ## ספר בתהליך
 

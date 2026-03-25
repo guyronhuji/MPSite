@@ -6,7 +6,6 @@ navTitle: Forschung
 summary: Laufende Projekte zu Stimme, Migration, Mehrsprachigkeit und jüdischer literarischer Moderne.
 showInNav: true
 order: 3
-updatedAt: "2026-03-25"
 ---
 ## Aktuelles Projekt
 

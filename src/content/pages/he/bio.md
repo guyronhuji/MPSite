@@ -6,7 +6,6 @@ navTitle: קורות חיים
 summary: פרופיל אקדמי, מלגות, פרסים והשכלה.
 showInNav: true
 order: 2
-updatedAt: "2026-03-25"
 ---
 ## פרופיל אקדמי
 
