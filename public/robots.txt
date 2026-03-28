@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://guyronhuji.github.io/MPSite/sitemap-index.xml
