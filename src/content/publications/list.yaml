@@ -1,0 +1,115 @@
+updated: 2026-03-29
+items:
+  - id: writers-at-threshold
+    year: 2026
+    status: forthcoming
+    type: book
+    title: "Writers at the Threshold: Hebrew, German, and the Paradox of Home"
+    authors: Michal Peles-Almagor
+    venue: Book manuscript
+    details: Manuscript in preparation.
+  - id: kafka-judgement-letter
+    year: 2026
+    status: forthcoming
+    type: chapter
+    title: "The Letter in Kafka's The Judgement"
+    authors: Michal Peles-Almagor
+    venue: Articles Submitted to Dan Miron at the Celebration of his 90th Birthday
+    details: Hebrew, forthcoming.
+  - id: stars-daylight-leah-goldberg
+    year: 2023
+    status: published
+    type: article
+    title: "I Seek the Stars in the Daylight: Citation, Recitation, and Leah Goldberg's Hidden German Poem"
+    authors: Michal Peles-Almagor
+    venue: Naharaim 17.1
+  - id: theater-dp-camps-italy
+    year: 2022
+    status: published
+    type: article
+    title: "Theater in Jewish DPs Camps in Italy: A Stage for Political and Ideological Debate on Aliya, Zionism, and Jewish Identity"
+    authors: Michal Peles-Almagor, Achinoam Aldouby, and Chiara Renzo
+    venue: Quest. Issues in Contemporary Jewish History 21.1
+  - id: here-is-a-different-place
+    year: 2018
+    status: published
+    type: article
+    title: "Here is a Different Place: Lieland and Hebrew Literary Space"
+    authors: Michal Peles-Almagor
+    venue: BGU Review 5
+  - id: beyt-bialik-guided-tour
+    year: 2023
+    status: published
+    type: other
+    title: "Beyt Bialik: A Guided Tour"
+    authors: Michal Peles-Almagor
+    venue: Moznaim 97:2
+    details: Pages 96-99.
+  - id: abandoned-you-twice
+    year: 2023
+    status: published
+    type: other
+    title: "I Admit, You Can Say I Abandoned You Twice"
+    authors: Michal Peles-Almagor
+    venue: Haaretz, Tarbut Ve-Sifrut
+    details: Hebrew.
+  - id: yael-neeman-autobiographical
+    year: 2019
+    status: published
+    type: other
+    title: "On Yael Neeman's Auto/Biographical Novel"
+    authors: Michal Peles-Almagor
+    venue: Odot 12
+    details: Online journal, Hebrew.
+  - id: nissim-aloni-american-princess
+    year: 2012
+    status: published
+    type: article
+    title: "Between Hope and the Abyss: Identity Crisis and Void in Nissim Aloni's The American Princess"
+    authors: Michal Peles-Almagor
+    venue: Hateatron 34
+    details: Pages 99-106, Hebrew.
+  - id: review-women-writing-jewish-modernity
+    year: 2023
+    status: published
+    type: other
+    title: "Review of Women Writing Jewish Modernity, 1919-1939 by Allison Schachter"
+    authors: Michal Peles-Almagor
+    venue: Modernism/Modernity
+    details: November 2023.
+  - id: review-crossroads
+    year: 2022
+    status: published
+    type: other
+    title: "At the Crossroad (Review of Jonathan Franzen's Crossroads)"
+    authors: Michal Peles-Almagor
+    venue: "Panas: Mosaf lebikoret sifrut"
+  - id: translation-i-am-the-mizrachit
+    year: 2022
+    status: published
+    type: other
+    title: "I am the Mizrachit (translation)"
+    authors: Adi Keissar; translated by Michal Peles-Almagor
+    venue: Translation from Hebrew to English
+  - id: translation-morning-reflections
+    year: 2021
+    status: published
+    type: other
+    title: "Untitled poem in Morning Reflections (translation)"
+    authors: Diti Ronen; translated by Michal Peles-Almagor
+    venue: Poetry-video directed by Shiry Price
+  - id: translation-ketchup-or-mustard
+    year: 2016
+    status: published
+    type: other
+    title: "Ketchup or Mustard (translation)"
+    authors: Lior Almagor; translated by Michal Peles-Almagor
+    venue: Strawberry One Act Festival, The Riant Theatre, NYC
+  - id: translation-pinter-night
+    year: 2009
+    status: published
+    type: other
+    title: "Night (translation)"
+    authors: Harold Pinter; translated by Michal Peles-Almagor
+    venue: "Memory Plays: Four Plays and Poems"
+    details: Translation from English to Hebrew.

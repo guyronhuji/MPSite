@@ -397,6 +397,118 @@ const langBadge: Record<Locale, string> = {
     text-underline-offset: 0.16em;
   }
 
+  .publications-structured {
+    margin-top: 1.3rem;
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .pub-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .pub-filter-btn {
+    appearance: none;
+    border: 1px solid color-mix(in oklab, var(--accent), white 35%);
+    background: color-mix(in oklab, var(--bg), white 45%);
+    color: color-mix(in oklab, var(--accent), black 25%);
+    border-radius: 999px;
+    padding: 0.28rem 0.64rem;
+    font: inherit;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+  }
+
+  .pub-filter-btn:hover {
+    border-color: color-mix(in oklab, var(--accent), black 4%);
+    background: color-mix(in oklab, var(--accent), white 74%);
+  }
+
+  .pub-filter-btn.active {
+    background: color-mix(in oklab, var(--accent), black 4%);
+    color: white;
+    border-color: color-mix(in oklab, var(--accent), black 4%);
+  }
+
+  .publication-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.72rem;
+  }
+
+  .publication-item {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: color-mix(in oklab, var(--bg), white 38%);
+    padding: 0.72rem 0.85rem;
+    display: grid;
+    gap: 0.34rem;
+  }
+
+  .publication-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--ink-soft);
+    font-size: 0.84rem;
+  }
+
+  .pub-badge {
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    padding: 0.08rem 0.4rem;
+    font-size: 0.76rem;
+    line-height: 1.1;
+    color: var(--ink-soft);
+    background: color-mix(in oklab, var(--bg), white 52%);
+  }
+
+  .pub-badge.books {
+    border-color: color-mix(in oklab, var(--accent), white 36%);
+    color: color-mix(in oklab, var(--accent), black 20%);
+  }
+
+  .pub-badge.articles {
+    border-color: color-mix(in oklab, var(--accent), white 46%);
+    color: color-mix(in oklab, var(--accent), black 30%);
+  }
+
+  .pub-badge.chapters {
+    border-color: color-mix(in oklab, var(--accent), white 54%);
+    color: color-mix(in oklab, var(--accent), black 34%);
+  }
+
+  .pub-badge.forthcoming {
+    border-color: color-mix(in oklab, oklch(0.66 0.17 60), white 40%);
+    color: color-mix(in oklab, oklch(0.48 0.15 60), black 16%);
+  }
+
+  .publication-title,
+  .publication-details {
+    margin: 0;
+  }
+
+  .publication-title {
+    font-weight: 700;
+    line-height: 1.38;
+  }
+
+  .publication-details {
+    font-size: 0.97rem;
+    color: var(--ink-soft);
+  }
+
+  .publication-item.is-forthcoming {
+    border-color: color-mix(in oklab, oklch(0.66 0.17 60), white 45%);
+    background: color-mix(in oklab, oklch(0.96 0.02 90), white 30%);
+  }
+
   .children {
     margin-top: 1.5rem;
     border-top: 1px solid var(--line);

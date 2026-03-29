@@ -214,3 +214,60 @@ content:
         type: rich-text
         options:
           media: uploads
+
+  - name: publications
+    label: Publications Data
+    type: file
+    path: src/content/publications/list.yaml
+    format: yaml
+    fields:
+      - name: updated
+        label: Updated
+        type: string
+      - name: items
+        label: Publication Items
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.year} - {fields.title}"
+        fields:
+          - name: id
+            label: ID
+            type: string
+            required: true
+          - name: year
+            label: Year
+            type: number
+            required: true
+          - name: status
+            label: Status
+            type: select
+            options:
+              values: [published, forthcoming]
+          - name: type
+            label: Type
+            type: select
+            options:
+              values: [book, edited_volume, chapter, article, other]
+          - name: title
+            label: Title
+            type: text
+            required: true
+          - name: authors
+            label: Authors
+            type: text
+            required: true
+          - name: venue
+            label: Venue
+            type: text
+            required: true
+          - name: details
+            label: Details
+            type: text
+          - name: doi
+            label: DOI
+            type: string
+          - name: url
+            label: URL
+            type: string

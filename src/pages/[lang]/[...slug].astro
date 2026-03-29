@@ -1,5 +1,5 @@
 ---
-import { getCollection, render } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 import SiteLayout from "../../layouts/SiteLayout.astro";
 import { getUiCopy } from "../../lib/copy";
 import { defaultLocale, isLocale, localeList, locales, type Locale } from "../../lib/i18n";
@@ -32,6 +32,42 @@ const currentPath = Astro.params.slug ?? "home";
 
 const allPages = await getCollection("pages");
 const entry = allPages.find((item) => item.data.lang === localeCode && item.data.path === currentPath);
+const publicationsEntry = await getEntry("publications", "list");
+
+const publications = (publicationsEntry?.data.items ?? [])
+  .filter(
+    (
+      item,
+    ): item is {
+      id: string;
+      year: number;
+      status: "published" | "forthcoming";
+      type: "book" | "edited_volume" | "chapter" | "article" | "other";
+      title: string;
+      authors: string;
+      venue: string;
+      details?: string;
+      doi?: string;
+      url?: string;
+    } =>
+      typeof item.id === "string" &&
+      typeof item.year === "number" &&
+      (item.status === "published" || item.status === "forthcoming" || item.status === undefined) &&
+      (item.type === "book" ||
+        item.type === "edited_volume" ||
+        item.type === "chapter" ||
+        item.type === "article" ||
+        item.type === "other") &&
+      typeof item.title === "string" &&
+      typeof item.authors === "string" &&
+      typeof item.venue === "string",
+  )
+  .map((item) => ({
+    ...item,
+    status: item.status ?? "published",
+  }))
+  .slice()
+  .sort((a, b) => b.year - a.year);
 
 if (!entry) {
   return Astro.redirect(pageHref(localeCode, "home"));
@@ -78,8 +114,23 @@ const languageLinks = localeList.map((code) => {
 const title = `${entry.data.title} | Dr. Michal Peles-Almagor`;
 const description = entry.data.summary ?? "Academic website scaffold";
 const isHomePage = currentSlug === "home";
+const isPublicationsPage = currentSlug === "publications";
 const profileImageSrc = assetHref(entry.data.heroImage ?? "/uploads/michal-peles-almagor.jpg");
 const profileImageAlt = entry.data.heroImageAlt ?? ui.portraitAlt;
+
+const publicationGroup = (item: (typeof publications)[number]) => {
+  if (item.status === "forthcoming") return "forthcoming";
+  if (item.type === "book" || item.type === "edited_volume") return "books";
+  if (item.type === "chapter") return "chapters";
+  return "articles";
+};
+
+const publicationTypeLabel = (item: (typeof publications)[number]) => {
+  if (item.status === "forthcoming") return ui.filterForthcoming;
+  if (item.type === "book" || item.type === "edited_volume") return ui.filterBooks;
+  if (item.type === "chapter") return ui.filterChapters;
+  return ui.filterArticles;
+};
 ---
 
 <SiteLayout
@@ -117,6 +168,69 @@ const profileImageAlt = entry.data.heroImageAlt ?? ui.portraitAlt;
 
     <div class="article-body">
       <Content />
+
+      {
+        isPublicationsPage && publications.length > 0 && (
+          <section class="publications-structured" aria-label={ui.publicationListAria}>
+            <div class="pub-filter" data-pub-filter aria-label={ui.publicationFiltersAria}>
+              <button type="button" class="pub-filter-btn active" data-filter="all">{ui.filterAll}</button>
+              <button type="button" class="pub-filter-btn" data-filter="books">{ui.filterBooks}</button>
+              <button type="button" class="pub-filter-btn" data-filter="articles">{ui.filterArticles}</button>
+              <button type="button" class="pub-filter-btn" data-filter="chapters">{ui.filterChapters}</button>
+              <button type="button" class="pub-filter-btn" data-filter="forthcoming">{ui.filterForthcoming}</button>
+            </div>
+
+            <ul class="publication-list" role="list" data-publication-list>
+              {
+                publications.map((item) => {
+                  const group = publicationGroup(item);
+                  return (
+                    <li class:list={["publication-item", `type-${group}`, item.status === "forthcoming" && "is-forthcoming"]} data-type={group}>
+                      <div class="publication-meta">
+                        <span>{item.year}</span>
+                        <span>·</span>
+                        <span class:list={["pub-badge", group]}>{publicationTypeLabel(item)}</span>
+                      </div>
+                      <p class="publication-title">{item.title}</p>
+                      <p class="publication-details">
+                        {item.authors}. {item.venue}
+                        {item.details ? ` ${item.details}` : ""}
+                        {item.doi ? ` DOI: ${item.doi}` : ""}
+                      </p>
+                      {item.url ? <p class="publication-details"><a href={item.url} target="_blank" rel="noreferrer">{ui.publicationOpenLink}</a></p> : null}
+                    </li>
+                  );
+                })
+              }
+            </ul>
+
+            <script is:inline>
+              (() => {
+                const root = document.currentScript?.closest(".publications-structured");
+                if (!root) return;
+                const filterWrap = root.querySelector("[data-pub-filter]");
+                const list = root.querySelector("[data-publication-list]");
+                if (!filterWrap || !list) return;
+                const buttons = Array.from(filterWrap.querySelectorAll("[data-filter]"));
+                const items = Array.from(list.querySelectorAll("[data-type]"));
+
+                const applyFilter = (value) => {
+                  items.forEach((item) => {
+                    item.hidden = value !== "all" && item.dataset.type !== value;
+                  });
+                  buttons.forEach((btn) => {
+                    btn.classList.toggle("active", btn.dataset.filter === value);
+                  });
+                };
+
+                buttons.forEach((btn) => {
+                  btn.addEventListener("click", () => applyFilter(btn.dataset.filter || "all"));
+                });
+              })();
+            </script>
+          </section>
+        )
+      }
     </div>
 
     {
