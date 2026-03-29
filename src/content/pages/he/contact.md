@@ -5,7 +5,7 @@ title: יצירת קשר
 navTitle: יצירת קשר
 summary: שיוך מוסדי ופרטי התקשרות.
 showInNav: true
-order: 6
+order: 7
 ---
 - **שיוך מוסדי:** חברת מרטין בובר, האוניברסיטה העברית בירושלים
 - **פקולטה/בית ספר:** Jack, Josef and Morton Mandel School for Advanced Studies in the Humanities

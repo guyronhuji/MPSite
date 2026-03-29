@@ -5,7 +5,7 @@ title: التواصل
 navTitle: التواصل
 summary: الانتماء المؤسسي وبيانات التواصل.
 showInNav: true
-order: 6
+order: 7
 ---
 - **الانتماء المؤسسي:** جمعية مارتن بوبر، الجامعة العبرية في القدس
 - **المدرسة:** Jack, Josef and Morton Mandel School for Advanced Studies in the Humanities
