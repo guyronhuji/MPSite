@@ -22,6 +22,7 @@ content:
       fields: [title, navTitle, showInNav, order]
       node:
         filename: index.md
+        hideDirs: nodes
     fields:
       - name: lang
         label: Language code
@@ -74,6 +75,7 @@ content:
       fields: [title, navTitle, showInNav, order]
       node:
         filename: index.md
+        hideDirs: nodes
     fields:
       - name: lang
         label: Language code
@@ -126,6 +128,7 @@ content:
       fields: [title, navTitle, showInNav, order]
       node:
         filename: index.md
+        hideDirs: nodes
     fields:
       - name: lang
         label: Language code
@@ -178,6 +181,7 @@ content:
       fields: [title, navTitle, showInNav, order]
       node:
         filename: index.md
+        hideDirs: nodes
     fields:
       - name: lang
         label: Language code
