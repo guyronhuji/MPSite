@@ -55,10 +55,31 @@ const langBadge: Record<Locale, string> = {
     <div class="canvas-glow" aria-hidden="true"></div>
     <div class="site-shell">
       <header class="site-sidebar">
-        <a class="brand" href={pageHref(lang, "home")}>
-          <span class="brand-title">Dr. Michal Peles-Almagor</span>
-          <span class="brand-subtitle">{ui.brandSubtitle}</span>
-        </a>
+        <div class="sidebar-top">
+          <a class="brand" href={pageHref(lang, "home")}>
+            <span class="brand-title">Dr. Michal Peles-Almagor</span>
+            <span class="brand-subtitle">{ui.brandSubtitle}</span>
+          </a>
+
+          <nav class="language-nav" aria-label={ui.languageNavAria}>
+            {
+              languageLinks.map((item) => (
+                <a
+                  href={item.href}
+                  class:list={[
+                    "lang-link",
+                    item.code === lang && "active",
+                    !item.available && "fallback",
+                  ]}
+                  aria-current={item.code === lang ? "page" : undefined}
+                  title={locales[item.code].label}
+                >
+                  {langBadge[item.code]}
+                </a>
+              ))
+            }
+          </nav>
+        </div>
 
         <nav class="main-nav" aria-label={ui.primaryNavAria}>
           {
@@ -68,25 +89,6 @@ const langBadge: Record<Locale, string> = {
                 class:list={["main-nav-link", currentSlug === entry.data.path && "active"]}
               >
                 {entry.data.navTitle ?? entry.data.title}
-              </a>
-            ))
-          }
-        </nav>
-
-        <nav class="language-nav" aria-label={ui.languageNavAria}>
-          {
-            languageLinks.map((item) => (
-              <a
-                href={item.href}
-                class:list={[
-                  "lang-link",
-                  item.code === lang && "active",
-                  !item.available && "fallback",
-                ]}
-                aria-current={item.code === lang ? "page" : undefined}
-                title={locales[item.code].label}
-              >
-                {langBadge[item.code]}
               </a>
             ))
           }
@@ -210,6 +212,12 @@ const langBadge: Record<Locale, string> = {
     min-height: calc(100vh - 1.8rem);
   }
 
+  .sidebar-top {
+    display: grid;
+    gap: 0.55rem;
+    align-content: start;
+  }
+
   .brand {
     display: flex;
     flex-direction: column;
@@ -253,7 +261,6 @@ const langBadge: Record<Locale, string> = {
   }
 
   .language-nav {
-    margin-top: auto;
     display: flex;
     align-items: center;
     gap: 0.16rem;
@@ -662,7 +669,6 @@ const langBadge: Record<Locale, string> = {
 
     .language-nav {
       justify-content: flex-start;
-      margin-top: 0.2rem;
     }
 
     .article-shell {
