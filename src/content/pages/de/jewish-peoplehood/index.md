@@ -1,19 +1,19 @@
 ---
 lang: de
 path: jewish-peoplehood
-title: Judische Peoplehood
-navTitle: Judische Peoplehood
-summary: Forschung und offentliche Arbeit zu judischer Peoplehood, kollektivem Gedachtnis und kultureller Weitergabe.
+title: Juedische Peoplehood
+navTitle: Juedische Peoplehood
+summary: Forschung und oeffentlichkeitsbezogene Arbeit zu juedischer Peoplehood, kollektivem Gedaechtnis und kultureller Weitergabe.
 showInNav: true
 order: 8
 ---
-Diese Seite bundelt Arbeiten zu judischer Peoplehood in Literatur, Kultur und Ideengeschichte.
+Diese Seite buendelt Arbeiten zu juedischer Peoplehood in Literatur, Kultur und Ideengeschichte.
 
-## Aktuelle Schwerpunkte
+## Aktueller Fokus
 
-- Judische Peoplehood im modernen literarischen Denken
-- Kollektives Gedachtnis und kulturelle Kontinuitat
-- Sprache, Migration und Identitatsbildung
-- Offentliche Debatten zu Zugehorigkeit und Gemeinschaft
+- Juedische Peoplehood im modernen literarischen Denken
+- Kollektives Gedaechtnis und kulturelle Kontinuitaet
+- Sprache, Migration und Identitaetsbildung
+- Oeffentliche Debatten zu Zugehoerigkeit und Gemeinschaft
 
-Weitere Publikationen, Vortrage und Materialien konnen hier uber das CMS gepflegt werden.
+Zusaetzliche Publikationen, Vortraege und Materialien koennen hier ueber das CMS ergaenzt werden.

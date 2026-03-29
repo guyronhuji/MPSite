@@ -18,5 +18,3 @@ This page gathers work related to Jewish peoplehood across literature, culture, 
 - Public conversations on belonging and community
 
 Additional publications, talks, and resources can be added here through the CMS.
-
-&nbsp;

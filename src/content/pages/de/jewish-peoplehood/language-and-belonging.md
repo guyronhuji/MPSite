@@ -1,16 +1,16 @@
 ---
 lang: de
 path: jewish-peoplehood/language-and-belonging
-title: Sprache, Migration und Zugehorigkeit
-summary: Wie Mehrsprachigkeit und Migration judische Peoplehood und moderne Zugehorigkeit formen.
+title: Sprache, Migration und Zugehoerigkeit
+summary: Wie mehrsprachiges Leben juedische Peoplehood und moderne Zugehoerigkeit praegt.
 showInNav: false
 order: 82
 ---
-Diese Unterseite untersucht, wie Sprache und Migration kulturelle Zugehorigkeit pragen.
+Diese Unterseite untersucht, wie Sprache und Migration kulturelle Zugehoerigkeit praegen.
 
 ## Themen
 
-- Mehrsprachige Identitatsbildung
-- Hebraisch-deutsche literarische Verflechtungen
+- Bildung mehrsprachiger Identitaet
+- Hebraeisch-deutsche literarische Uebergaenge
 - Migration und Gemeinschaftsvorstellungen
 - Stimme, Ort und kulturelle Bindung

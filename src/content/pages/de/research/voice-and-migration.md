@@ -6,17 +6,17 @@ summary: Fokussierte Unterseite zu Mehrsprachigkeit, Migration und literarischer
 showInNav: false
 order: 5
 ---
-Dieses Teilprojekt untersucht die Rolle von stimmlicher Performanz und mehrsprachigem Schreiben in den Werken juedischer Autorinnen, die sprachliche und geografische Grenzen ueberschritten haben.
+Dieses Teilprojekt untersucht die Rolle von gesprochener Performanz und mehrsprachigem Schreiben in den Werken juedischer Autorinnen, die sprachliche und geografische Grenzen ueberschritten haben.
 
 ### Autorinnen im Fokus
 
 - Leah Goldberg
 - Mascha Kaleko
-- Else Lasker-Schueler
+- Else Lasker-Schuler
 - Jacqueline Kahanov
 
 ### Forschungsfragen
 
-- Wie veraendert performierte Stimme die literarische Bedeutung?
-- Wie wirken muendliche und schriftliche Formen in Migrationskontexten zusammen?
+- Wie formt performierte Stimme literarische Bedeutung neu?
+- Wie interagieren muendliche und schriftliche Formen in Migrationskontexten?
 - Welche neuen Formen juedischer kultureller Zugehoerigkeit entstehen durch Mehrsprachigkeit?

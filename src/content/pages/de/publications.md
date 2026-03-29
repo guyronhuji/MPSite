@@ -3,8 +3,8 @@ lang: de
 path: publications
 title: Publikationen
 navTitle: Publikationen
-summary: Auswahl an Buchern, Artikeln, Kapiteln, Rezensionen und Ubersetzungen.
+summary: Ausgewaehlte Buecher, Artikel, Kapitel, Rezensionen und Uebersetzungen.
 showInNav: true
 order: 6
 ---
-Unten finden Sie eine nach Typ filterbare Publikationsliste: Bucher, Artikel, Kapitel und angekundigte Arbeiten.
+Durchsuchen Sie die Publikationen unten nach Typ, darunter Buecher, Artikel, Kapitel und bevorstehende Arbeiten.

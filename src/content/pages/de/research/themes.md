@@ -2,14 +2,20 @@
 lang: de
 path: research/themes
 title: Forschungsthemen
-summary: Zentrale Themenfelder zu Literatur, Migration und Kulturgeschichte.
+summary: Zentrale Themenfelder zwischen Literatur, Migration und Kulturgeschichte.
 showInNav: false
 order: 4
 ---
 ## Kernthemen
 
-- Hebräische und deutsche Literatur in der jüdischen Moderne
-- Jüdische Literatur- und Kulturgeschichte
-- Migration, Verortung und mehrsprachige Zugehörigkeit
-- Modernismus und sprachübergreifende Formen
-- Theater, Performance und Stimme
+- Hebraeische und deutsche Literatur in der modernen juedischen Kultur
+- Juedische Literatur- und Kulturgeschichte
+- Migration, Entwurzelung und mehrsprachige Zugehoerigkeit
+- Moderne und sprachuebergreifende Form
+- Theater, Performanz und Stimme
+
+## Methodischer Fokus
+
+- Vergleichende literaturwissenschaftliche Analyse
+- Oral-textuelle Beziehungen in der literarischen Moderne
+- Schnittstellen von Archiven, Aufnahmen und textueller Interpretation

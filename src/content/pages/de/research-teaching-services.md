@@ -3,18 +3,18 @@ lang: de
 path: research-teaching-services
 title: Forschungs- und Lehrangebote
 navTitle: Forschungs- und Lehrangebote
-summary: Akademische Angebote wie Gastvortrage, Workshops, Beratung und Kooperationen in der Lehre.
+summary: Akademische Angebote mit eingeladenen Vortraegen, Workshops, Beratung und kooperativer Lehre.
 showInNav: true
 order: 9
 ---
-Diese Seite beschreibt akademische und offentliche Angebote im Bereich Forschung und Lehre.
+Diese Seite beschreibt akademische und oeffentlichkeitsbezogene Angebote im Bereich Forschung und Lehre.
 
 ## Angebote
 
-- Gastvortrage und eingeladene Seminare
-- Lesegruppen und thematische Workshops
-- Beratung zu Curriculum und Syllabus
+- Eingeladene Vortraege und Gastseminare
+- Lektueregruppen und thematische Workshops
+- Beratung zu Curricula und Syllabi
 - Akademisches Mentoring und kooperative Betreuung
-- Public-Humanities- und Kulturprogramme
+- Public Humanities und kulturelle Programmgestaltung
 
-Details zu Formaten und Verfugbarkeit konnen hier uber das CMS aktualisiert werden.
+Details zu Formaten und Verfuegbarkeit koennen hier ueber das CMS aktualisiert werden.

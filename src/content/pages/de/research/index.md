@@ -3,7 +3,7 @@ lang: de
 path: research
 title: Forschung
 navTitle: Forschung
-summary: Laufende Projekte zu Stimme, Migration, Mehrsprachigkeit und jüdischer literarischer Moderne.
+summary: Laufende Projekte zu Stimme, Migration, Mehrsprachigkeit und juedischer literarischer Moderne.
 showInNav: true
 order: 4
 ---
@@ -11,13 +11,15 @@ order: 4
 
 ### Voice and Migration in Jewish Women's Writing
 
-Das Projekt untersucht, wie performative Stimme und mehrsprachige Ausdrucksformen in den Werken jüdischer Autorinnen wirksam werden, die Migration und Entwurzelung erfahren haben.
+Dieses Projekt untersucht, wie performierte Stimme und mehrsprachiger Ausdruck in den Texten juedischer Autorinnen wirken, die Migration und Entwurzelung erfahren haben. Im Zentrum stehen Leah Goldberg, Mascha Kaleko, Else Lasker-Schuler und Jacqueline Kahanov.
 
-Im Mittelpunkt stehen Leah Goldberg, Mascha Kaleko, Else Lasker-Schuler und Jacqueline Kahanov, gelesen im Zusammenspiel von schriftlichen Texten und aufgezeichneten/stimmlichen Performanzen.
+Durch die gemeinsame Lektuere von aufgezeichneten Performanzen und literarischen Texten zeigt das Projekt, wie muendliche und schriftliche Formen ueber Sprache, Geografie und kulturelle Zugehoerigkeit hinweg zusammenwirken.
 
 ## Weitere Forschungslinien
 
-- Deutsch-hebräische Literaturbeziehungen
-- Öffentliche orale Sphären in jüdischen Kontexten
-- Modernistische Poetik und Mehrsprachigkeit
-- Theater, Performance und literarische Stimme
+- Deutsch-hebraeischer Literaturaustausch
+- Juedische oeffentliche orale Sphaeren
+- Modernistische Poetik und mehrsprachiges Schreiben
+- Theater, Performanz und literarische Stimme
+
+Siehe Unterseiten unten fuer vertiefende Themen.

@@ -1,19 +1,19 @@
 ---
 lang: de
 path: outreach
-title: Outreach und Offentliche Vermittlung
+title: Outreach und Oeffentliche Vermittlung
 navTitle: Outreach
-summary: Offentliche Vortrage, Workshops, Medienbeitrage und kulturelle Zusammenarbeit.
+summary: Oeffentliches Schreiben, Vortraege, Workshops und kulturelle Arbeit jenseits akademischer Publikationen.
 showInNav: true
 order: 7
 ---
-Diese Seite sammelt offentlichkeitsbezogene Arbeit, eingeladene Vortrage, Workshops und kulturelle Initiativen.
+Diese Seite praesentiert oeffentlichkeitsbezogene Arbeit, eingeladene Vortraege, Workshops und kulturelle Initiativen.
 
-## Startstruktur
+## Aktuelle Struktur
 
-- Offentliche Vortrage und Panels
+- Oeffentliche Vortraege und Panelteilnahmen
 - Workshops und Lehrinitiativen
-- Medieninterviews und offentliches Schreiben
-- Kooperationen mit kulturellen Institutionen
+- Medieninterviews und oeffentliches Schreiben
+- Kooperationen mit Kulturinstitutionen
 
-Weitere Inhalte konnen direkt im CMS gepflegt werden.
+Weitere Eintraege koennen direkt im CMS hinzugefuegt und aktualisiert werden.
