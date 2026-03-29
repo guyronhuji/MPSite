@@ -5,7 +5,7 @@ title: Outreach und Offentliche Vermittlung
 navTitle: Outreach
 summary: Offentliche Vortrage, Workshops, Medienbeitrage und kulturelle Zusammenarbeit.
 showInNav: true
-order: 6
+order: 7
 ---
 Diese Seite sammelt offentlichkeitsbezogene Arbeit, eingeladene Vortrage, Workshops und kulturelle Initiativen.
 

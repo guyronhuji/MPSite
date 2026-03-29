@@ -5,7 +5,7 @@ title: Outreach and Public Engagement
 navTitle: Outreach
 summary: Public writing, talks, workshops, and cultural engagement beyond academic publishing.
 showInNav: true
-order: 6
+order: 7
 ---
 This page presents public-facing work, invited talks, workshops, and cultural initiatives.
 

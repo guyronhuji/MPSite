@@ -5,7 +5,7 @@ title: Kontakt
 navTitle: Kontakt
 summary: Institutionelle Anbindung und Kontaktdaten.
 showInNav: true
-order: 7
+order: 8
 ---
 - **Institution:** Martin Buber Society of Fellows, Hebräische Universität Jerusalem
 - **School:** Jack, Josef and Morton Mandel School for Advanced Studies in the Humanities
