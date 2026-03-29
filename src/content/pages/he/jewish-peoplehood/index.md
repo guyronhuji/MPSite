@@ -1,7 +1,7 @@
 ---
 lang: he
 path: jewish-peoplehood
-title: עםיות יהודית
+title: עמיות יהודית
 navTitle: עםיות יהודית
 summary: מחקר ופעילות ציבורית על עםיות יהודית, זיכרון קולקטיבי והעברה תרבותית.
 showInNav: true
