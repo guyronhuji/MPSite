@@ -5,7 +5,7 @@ title: מחקר
 navTitle: מחקר
 summary: פרויקטים נוכחיים על קול, הגירה, רב-לשוניות ומודרניות יהודית.
 showInNav: true
-order: 3
+order: 4
 ---
 ## פרויקט נוכחי
 

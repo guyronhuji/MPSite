@@ -5,7 +5,7 @@ title: קורות חיים
 navTitle: קורות חיים
 summary: פרופיל אקדמי, מלגות, פרסים והשכלה.
 showInNav: true
-order: 2
+order: 3
 ---
 ## פרופיל אקדמי
 

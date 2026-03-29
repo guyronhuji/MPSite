@@ -1,11 +1,11 @@
 ---
 lang: de
 path: bio
-title: Biografie
-navTitle: Biografie
+title: Lebenslauf
+navTitle: Lebenslauf
 summary: Akademisches Profil, Fellowships, Auszeichnungen und Ausbildung.
 showInNav: true
-order: 2
+order: 3
 ---
 ## Akademisches Profil
 

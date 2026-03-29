@@ -1,11 +1,11 @@
 ---
 lang: en
 path: bio
-title: Bio
-navTitle: Bio
+title: Curriculum Vitae
+navTitle: Curriculum Vitae
 summary: Full academic bio and curriculum vitae.
 showInNav: true
-order: 2
+order: 3
 ---
 ## Academic Profile
 

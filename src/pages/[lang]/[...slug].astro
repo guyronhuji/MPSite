@@ -110,6 +110,12 @@ const languageLinks = localeList.map((code) => {
     available: Boolean(translated),
   };
 });
+const langBadge: Record<Locale, string> = {
+  en: "En",
+  he: "עב",
+  ar: "عر",
+  de: "De",
+};
 
 const title = `${entry.data.title} | Dr. Michal Peles-Almagor`;
 const description = entry.data.summary ?? "Academic website scaffold";
@@ -140,9 +146,27 @@ const publicationTypeLabel = (item: (typeof publications)[number]) => {
   dir={localeMeta.dir}
   navEntries={navEntries}
   currentSlug={currentSlug}
-  languageLinks={languageLinks}
 >
   <article class="article-shell">
+    <nav class="language-nav page-language-nav" aria-label={ui.languageNavAria}>
+      {
+        languageLinks.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              "lang-link",
+              item.code === localeCode && "active",
+              !item.available && "fallback",
+            ]}
+            aria-current={item.code === localeCode ? "page" : undefined}
+            title={locales[item.code].label}
+          >
+            {langBadge[item.code]}
+          </a>
+        ))
+      }
+    </nav>
+
     {
       isHomePage && (
         <section class="home-splash" aria-label={ui.portraitAlt}>

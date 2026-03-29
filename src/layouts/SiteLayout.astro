@@ -1,10 +1,8 @@
 ---
-import { locales, type Locale } from "../lib/i18n";
+import { type Locale } from "../lib/i18n";
 import { assetHref, pageHref } from "../lib/routing";
 import { getUiCopy } from "../lib/copy";
 import type { CollectionEntry } from "astro:content";
-
-type LangLink = { code: Locale; href: string; available: boolean };
 
 interface Props {
   title: string;
@@ -13,7 +11,6 @@ interface Props {
   dir: "ltr" | "rtl";
   navEntries: CollectionEntry<"pages">[];
   currentSlug: string;
-  languageLinks: LangLink[];
 }
 
 const {
@@ -23,15 +20,8 @@ const {
   dir,
   navEntries,
   currentSlug,
-  languageLinks,
 } = Astro.props;
 const ui = getUiCopy(lang);
-const langBadge: Record<Locale, string> = {
-  en: "En",
-  he: "עב",
-  ar: "عر",
-  de: "De",
-};
 ---
 
 <!doctype html>
@@ -60,25 +50,6 @@ const langBadge: Record<Locale, string> = {
             <span class="brand-title">Dr. Michal Peles-Almagor</span>
             <span class="brand-subtitle">{ui.brandSubtitle}</span>
           </a>
-
-          <nav class="language-nav" aria-label={ui.languageNavAria}>
-            {
-              languageLinks.map((item) => (
-                <a
-                  href={item.href}
-                  class:list={[
-                    "lang-link",
-                    item.code === lang && "active",
-                    !item.available && "fallback",
-                  ]}
-                  aria-current={item.code === lang ? "page" : undefined}
-                  title={locales[item.code].label}
-                >
-                  {langBadge[item.code]}
-                </a>
-              ))
-            }
-          </nav>
         </div>
 
         <nav class="main-nav" aria-label={ui.primaryNavAria}>
@@ -265,6 +236,15 @@ const langBadge: Record<Locale, string> = {
     align-items: center;
     gap: 0.16rem;
     flex-wrap: wrap;
+  }
+
+  .page-language-nav {
+    justify-content: flex-end;
+    margin-bottom: 0.75rem;
+  }
+
+  html[dir="rtl"] .page-language-nav {
+    justify-content: flex-start;
   }
 
   .lang-link {
@@ -668,6 +648,10 @@ const langBadge: Record<Locale, string> = {
     }
 
     .language-nav {
+      justify-content: flex-end;
+    }
+
+    html[dir="rtl"] .language-nav {
       justify-content: flex-start;
     }
 

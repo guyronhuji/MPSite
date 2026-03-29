@@ -2,10 +2,10 @@
 lang: ar
 path: bio
 title: السيرة الأكاديمية
-navTitle: السيرة
+navTitle: السيرة الأكاديمية
 summary: ملف أكاديمي، زمالات، جوائز، وتعليم.
 showInNav: true
-order: 2
+order: 3
 ---
 ## الملف الأكاديمي
 
