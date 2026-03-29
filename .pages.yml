@@ -1,10 +1,7 @@
 media:
-  - name: uploads
-    label: Uploads
-    input: public/uploads
-    output: /uploads
-    path: /uploads
-    extensions: [jpg, jpeg, png, webp, gif, svg]
+  input: public/uploads
+  output: /uploads
+  rename: true
 
 content:
   - name: pages_en
@@ -22,18 +19,20 @@ content:
       fields: [title, navTitle, showInNav, order]
       node:
         filename: index.md
-        hideDirs: nodes
     fields:
       - name: lang
         label: Language code
         type: string
         default: en
+        required: true
       - name: path
         label: Path
         type: string
+        required: true
       - name: title
         label: Title
         type: string
+        required: true
       - name: navTitle
         label: Navigation Title
         type: string
@@ -75,18 +74,20 @@ content:
       fields: [title, navTitle, showInNav, order]
       node:
         filename: index.md
-        hideDirs: nodes
     fields:
       - name: lang
         label: Language code
         type: string
         default: he
+        required: true
       - name: path
         label: Path
         type: string
+        required: true
       - name: title
         label: Title
         type: string
+        required: true
       - name: navTitle
         label: Navigation Title
         type: string
@@ -128,18 +129,20 @@ content:
       fields: [title, navTitle, showInNav, order]
       node:
         filename: index.md
-        hideDirs: nodes
     fields:
       - name: lang
         label: Language code
         type: string
         default: ar
+        required: true
       - name: path
         label: Path
         type: string
+        required: true
       - name: title
         label: Title
         type: string
+        required: true
       - name: navTitle
         label: Navigation Title
         type: string
@@ -181,18 +184,20 @@ content:
       fields: [title, navTitle, showInNav, order]
       node:
         filename: index.md
-        hideDirs: nodes
     fields:
       - name: lang
         label: Language code
         type: string
         default: de
+        required: true
       - name: path
         label: Path
         type: string
+        required: true
       - name: title
         label: Title
         type: string
+        required: true
       - name: navTitle
         label: Navigation Title
         type: string
@@ -275,3 +280,13 @@ content:
           - name: url
             label: URL
             type: string
+
+settings:
+  content:
+    merge: true
+  commit:
+    templates:
+      create: "content(create): {path}"
+      update: "content(update): {path}"
+      delete: "content(delete): {path}"
+      rename: "content(rename): {oldPath} -> {newPath}"
