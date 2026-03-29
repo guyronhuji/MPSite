@@ -53,48 +53,50 @@ const langBadge: Record<Locale, string> = {
   </head>
   <body class={`locale-${lang}`}>
     <div class="canvas-glow" aria-hidden="true"></div>
-    <header class="site-header">
-      <a class="brand" href={pageHref(lang, "home")}>
-        <span class="brand-title">Dr. Michal Peles-Almagor</span>
-        <span class="brand-subtitle">{ui.brandSubtitle}</span>
-      </a>
+    <div class="site-shell">
+      <header class="site-sidebar">
+        <a class="brand" href={pageHref(lang, "home")}>
+          <span class="brand-title">Dr. Michal Peles-Almagor</span>
+          <span class="brand-subtitle">{ui.brandSubtitle}</span>
+        </a>
 
-      <nav class="main-nav" aria-label={ui.primaryNavAria}>
-        {
-          navEntries.map((entry) => (
-            <a
-              href={pageHref(lang, entry.data.path)}
-              class:list={["main-nav-link", currentSlug === entry.data.path && "active"]}
-            >
-              {entry.data.navTitle ?? entry.data.title}
-            </a>
-          ))
-        }
-      </nav>
+        <nav class="main-nav" aria-label={ui.primaryNavAria}>
+          {
+            navEntries.map((entry) => (
+              <a
+                href={pageHref(lang, entry.data.path)}
+                class:list={["main-nav-link", currentSlug === entry.data.path && "active"]}
+              >
+                {entry.data.navTitle ?? entry.data.title}
+              </a>
+            ))
+          }
+        </nav>
 
-      <nav class="language-nav" aria-label={ui.languageNavAria}>
-        {
-          languageLinks.map((item) => (
-            <a
-              href={item.href}
-              class:list={[
-                "lang-link",
-                item.code === lang && "active",
-                !item.available && "fallback",
-              ]}
-              aria-current={item.code === lang ? "page" : undefined}
-              title={locales[item.code].label}
-            >
-              {langBadge[item.code]}
-            </a>
-          ))
-        }
-      </nav>
-    </header>
+        <nav class="language-nav" aria-label={ui.languageNavAria}>
+          {
+            languageLinks.map((item) => (
+              <a
+                href={item.href}
+                class:list={[
+                  "lang-link",
+                  item.code === lang && "active",
+                  !item.available && "fallback",
+                ]}
+                aria-current={item.code === lang ? "page" : undefined}
+                title={locales[item.code].label}
+              >
+                {langBadge[item.code]}
+              </a>
+            ))
+          }
+        </nav>
+      </header>
 
-    <main class="site-main">
-      <slot />
-    </main>
+      <main class="site-main">
+        <slot />
+      </main>
+    </div>
   </body>
 </html>
 
@@ -183,24 +185,33 @@ const langBadge: Record<Locale, string> = {
       linear-gradient(180deg, var(--bg), var(--bg-strong));
   }
 
-  .site-header {
-    width: var(--content);
-    margin: clamp(1rem, 2vw, 1.6rem) auto 0;
+  .site-shell {
+    width: min(1320px, 96vw);
+    margin: clamp(1rem, 2vw, 1.6rem) auto;
+    display: grid;
+    grid-template-columns: minmax(230px, 300px) minmax(0, 1fr);
+    gap: clamp(0.8rem, 2vw, 1.4rem);
+    align-items: start;
+  }
+
+  .site-sidebar {
     padding: clamp(0.9rem, 2vw, 1.1rem);
-    padding-inline-end: clamp(5.8rem, 13vw, 7.6rem);
     border: 1px solid var(--line);
     border-radius: var(--radius);
     background: color-mix(in oklab, var(--bg), white 24%);
     box-shadow: var(--shadow);
     backdrop-filter: blur(8px);
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 0.8rem;
     animation: rise 420ms ease-out both;
-    position: relative;
+    position: sticky;
+    top: 0.9rem;
+    min-height: calc(100vh - 1.8rem);
   }
 
   .brand {
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     gap: 0.12rem;
   }
@@ -216,14 +227,14 @@ const langBadge: Record<Locale, string> = {
   }
 
   .main-nav {
-    display: flex;
-    gap: 0.45rem;
-    flex-wrap: wrap;
+    display: grid;
+    gap: 0.3rem;
+    align-content: start;
   }
 
   .main-nav-link {
-    padding: 0.4rem 0.72rem;
-    border-radius: 999px;
+    padding: 0.42rem 0.68rem;
+    border-radius: 10px;
     border: 1px solid transparent;
     transition: transform 220ms ease, background-color 220ms ease, border-color 220ms ease;
   }
@@ -242,13 +253,11 @@ const langBadge: Record<Locale, string> = {
   }
 
   .language-nav {
-    position: absolute;
-    inset-block-start: clamp(0.82rem, 1.8vw, 1rem);
-    inset-inline-end: clamp(0.82rem, 1.8vw, 1rem);
+    margin-top: auto;
     display: flex;
     align-items: center;
     gap: 0.16rem;
-    white-space: nowrap;
+    flex-wrap: wrap;
   }
 
   .lang-link {
@@ -279,9 +288,20 @@ const langBadge: Record<Locale, string> = {
   }
 
   .site-main {
-    width: var(--content);
-    margin: clamp(1rem, 2vw, 1.35rem) auto;
+    min-width: 0;
     animation: rise 520ms ease-out both;
+  }
+
+  html[dir="rtl"] .site-shell {
+    grid-template-columns: minmax(0, 1fr) minmax(230px, 300px);
+  }
+
+  html[dir="rtl"] .site-sidebar {
+    order: 2;
+  }
+
+  html[dir="rtl"] .site-main {
+    order: 1;
   }
 
   .article-shell {
@@ -614,9 +634,15 @@ const langBadge: Record<Locale, string> = {
   }
 
   @media (max-width: 800px) {
-    .site-header {
+    .site-shell {
+      width: var(--content);
+      grid-template-columns: 1fr;
+    }
+
+    .site-sidebar {
+      position: static;
+      min-height: 0;
       border-radius: 14px;
-      padding-inline-end: clamp(0.9rem, 2vw, 1.1rem);
     }
 
     .main-nav-link {
@@ -624,9 +650,15 @@ const langBadge: Record<Locale, string> = {
       font-size: 0.95rem;
     }
 
+    .main-nav {
+      display: flex;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+
     .language-nav {
-      position: static;
       justify-content: flex-start;
+      margin-top: 0.2rem;
     }
 
     .article-shell {
