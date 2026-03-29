@@ -5,7 +5,7 @@ title: Judische Peoplehood
 navTitle: Judische Peoplehood
 summary: Forschung und offentliche Arbeit zu judischer Peoplehood, kollektivem Gedachtnis und kultureller Weitergabe.
 showInNav: true
-order: 4
+order: 8
 ---
 Diese Seite bundelt Arbeiten zu judischer Peoplehood in Literatur, Kultur und Ideengeschichte.
 
