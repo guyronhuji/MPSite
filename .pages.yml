@@ -12,6 +12,16 @@ content:
     type: collection
     path: src/content/pages/en
     format: yaml-frontmatter
+    filename:
+      template: "{primary}.md"
+      field: create
+    subfolders: true
+    view:
+      layout: tree
+      primary: title
+      fields: [title, navTitle, showInNav, order]
+      node:
+        filename: index.md
     fields:
       - name: lang
         label: Language code
@@ -54,6 +64,16 @@ content:
     type: collection
     path: src/content/pages/he
     format: yaml-frontmatter
+    filename:
+      template: "{primary}.md"
+      field: create
+    subfolders: true
+    view:
+      layout: tree
+      primary: title
+      fields: [title, navTitle, showInNav, order]
+      node:
+        filename: index.md
     fields:
       - name: lang
         label: Language code
@@ -96,6 +116,16 @@ content:
     type: collection
     path: src/content/pages/ar
     format: yaml-frontmatter
+    filename:
+      template: "{primary}.md"
+      field: create
+    subfolders: true
+    view:
+      layout: tree
+      primary: title
+      fields: [title, navTitle, showInNav, order]
+      node:
+        filename: index.md
     fields:
       - name: lang
         label: Language code
@@ -138,6 +168,16 @@ content:
     type: collection
     path: src/content/pages/de
     format: yaml-frontmatter
+    filename:
+      template: "{primary}.md"
+      field: create
+    subfolders: true
+    view:
+      layout: tree
+      primary: title
+      fields: [title, navTitle, showInNav, order]
+      node:
+        filename: index.md
     fields:
       - name: lang
         label: Language code
