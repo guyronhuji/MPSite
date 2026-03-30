@@ -381,6 +381,37 @@ const ui = getUiCopy(lang);
     font-size: clamp(1.03rem, 1.3vw, 1.15rem);
   }
 
+  .article-body.contact-watermark-enabled {
+    position: relative;
+    background-image:
+      radial-gradient(
+        55% 70% at 86% 50%,
+        color-mix(in oklab, var(--accent), white 91%) 0%,
+        transparent 72%
+      ),
+      var(--contact-watermark-image);
+    background-repeat: no-repeat;
+    background-size: 100% 100%, 58% auto;
+    background-position: 0 0, right clamp(0.35rem, 1.1vw, 0.75rem) center;
+  }
+
+  html[dir="rtl"] .article-body.contact-watermark-enabled {
+    background-image:
+      radial-gradient(
+        55% 70% at 14% 50%,
+        color-mix(in oklab, var(--accent), white 91%) 0%,
+        transparent 72%
+      ),
+      var(--contact-watermark-image);
+    background-position: 0 0, left clamp(0.35rem, 1.1vw, 0.75rem) center;
+  }
+
+  @media (max-width: 800px) {
+    .article-body.contact-watermark-enabled {
+      background-size: 100% 100%, 82% auto;
+    }
+  }
+
   .article-body p,
   .article-body li {
     max-width: none;
