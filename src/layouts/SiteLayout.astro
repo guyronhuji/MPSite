@@ -47,6 +47,14 @@ const ui = getUiCopy(lang);
       <header class="site-sidebar">
         <div class="sidebar-top">
           <a class="brand" href={pageHref(lang, "home")}>
+            <img
+              src={assetHref("/uploads/michal-peles-almagor.jpg")}
+              alt=""
+              aria-hidden="true"
+              class="sidebar-photo"
+              width="72"
+              height="72"
+            />
             <span class="brand-title">Dr. Michal Peles-Almagor</span>
             <span class="brand-subtitle">{ui.brandSubtitle}</span>
           </a>
@@ -81,6 +89,8 @@ const ui = getUiCopy(lang);
     --ink-soft: oklch(0.4 0.03 250);
     --accent: oklch(0.37 0.16 255);
     --accent-soft: oklch(0.84 0.07 255);
+    --gold: oklch(0.58 0.16 62);
+    --gold-soft: oklch(0.88 0.08 75);
     --line: oklch(0.72 0.03 95);
     --radius: 18px;
     --shadow: 0 18px 38px color-mix(in oklab, var(--accent), transparent 78%);
@@ -154,7 +164,7 @@ const ui = getUiCopy(lang);
     z-index: -1;
     background:
       radial-gradient(40rem 30rem at 7% 10%, color-mix(in oklab, var(--accent), white 85%), transparent),
-      radial-gradient(40rem 30rem at 92% 0%, color-mix(in oklab, var(--accent), white 90%), transparent),
+      radial-gradient(40rem 30rem at 92% 0%, color-mix(in oklab, var(--gold), white 88%), transparent),
       linear-gradient(180deg, var(--bg), var(--bg-strong));
   }
 
@@ -198,9 +208,18 @@ const ui = getUiCopy(lang);
     gap: 0.12rem;
   }
 
+  .sidebar-photo {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--line);
+    box-shadow: 0 4px 12px color-mix(in oklab, var(--accent), transparent 72%);
+  }
+
   .brand-title {
-    font-size: clamp(1.35rem, 2vw, 1.85rem);
-    font-weight: 600;
+    font-size: clamp(1.45rem, 2vw, 1.95rem);
+    font-weight: 700;
   }
 
   .brand-subtitle {
@@ -312,8 +331,8 @@ const ui = getUiCopy(lang);
     height: 3px;
     background: linear-gradient(
       90deg,
-      color-mix(in oklab, var(--accent), white 8%),
-      color-mix(in oklab, var(--accent), white 40%)
+      color-mix(in oklab, var(--gold), white 10%),
+      color-mix(in oklab, var(--accent), white 35%)
     );
   }
 
@@ -530,8 +549,8 @@ const ui = getUiCopy(lang);
   }
 
   .pub-badge.forthcoming {
-    border-color: color-mix(in oklab, oklch(0.66 0.17 60), white 40%);
-    color: color-mix(in oklab, oklch(0.48 0.15 60), black 16%);
+    border-color: color-mix(in oklab, var(--gold), white 40%);
+    color: color-mix(in oklab, var(--gold), black 16%);
   }
 
   .publication-title,
@@ -550,8 +569,8 @@ const ui = getUiCopy(lang);
   }
 
   .publication-item.is-forthcoming {
-    border-color: color-mix(in oklab, oklch(0.66 0.17 60), white 45%);
-    background: color-mix(in oklab, oklch(0.96 0.02 90), white 30%);
+    border-color: color-mix(in oklab, var(--gold), white 45%);
+    background: color-mix(in oklab, var(--gold-soft), white 42%);
   }
 
   .children {
